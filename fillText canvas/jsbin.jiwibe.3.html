@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by Vova (http://jsbin.com/jiwibe/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+
+<html>
+  <head>
+    <meta name="description" content="measureText()">
+  <style id="jsbin-css">
+    canvas { border: solid black 1px;}
+</style>
+</head>
+  <body>
+
+    <canvas id="myCanvas" width=800 height=350>Your browser does not support the canvas tag.</canvas>
+
+    <script type="text/javascript">
+        var canvas=document.getElementById('myCanvas');
+        var context=canvas.getContext('2d');
+
+        context.font = "60pt Calibri";
+        context.lineWidth = 3;
+        context.strokeStyle = "blue";
+        context.fillStyle = "red";
+
+        context.save();
+      
+        context.fillText("Hello World!", 10, 100);
+        context.strokeText("Hello World!", 10, 100);
+
+        var textMetrics = context.measureText("Hello World!");
+        var width = textMetrics.width;
+
+        context.font = "20pt Arial";
+        context.fillText("Width of previous text: " + width + "pixels", 10, 150);
+
+        // Draw the baseline of the given width
+        context.moveTo(10, 100);
+        context.lineTo(width+10, 100);
+        context.stroke();
+
+        // Trying to drow a text with a maxWidth parameter and re-measure its width.
+        context.restore();  
+        context.fillText("Hello World!", 10, 220, 300);
+        textMetrics = context.measureText("Hello World!");
+        var newWidth = textMetrics.width;
+      
+        context.font = "20pt Arial";
+        context.fillText("Specifying the maxWigth parameter " + (width == newWidth ? "does not affect" : "affects") + " font measuring", 10, 250);
+    </script>
+
+  </body>
+</html>

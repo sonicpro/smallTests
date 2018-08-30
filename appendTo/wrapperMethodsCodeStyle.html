@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reg Braithwathe's Code style demo</title>
+    <meta charset="utf-8">
+    <style>
+      div[id] {
+        height: 40px;
+        border: solid 1px #a0522d;
+      }
+      .moveable {
+        width: 200px;
+        background-color: #ffb6c1;
+        border: solid 1px #808080;
+        text-align: center;
+        box-sizing: border-box;
+        float: left;
+      }
+      span {
+        padding-top : 10px;
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="sourceContainer">
+      <div class="moveable" id="1"><span>Moved once at a time</span></div>
+      <div class="moveable" id="2"><span>Moved two times in a row</span></div>
+    </div>
+    <div id="firstTarget"></div>
+    <div id="secondTarget"></div>
+    <script src="wrapperMethodsCodeStyle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <script>
+      function MyError (message) {
+          this.message = message;
+      }
+      MyError.prototype = new Error();
+
+      throw new MyError('Hello world!');
+    </script>
+  </body>
+</html>

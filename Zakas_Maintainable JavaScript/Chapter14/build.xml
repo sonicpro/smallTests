@@ -1,0 +1,17 @@
+<project name="maintainablejs" default="version">
+
+  <loadproperties srcfile="build.properties" />
+
+  <target name="hello">
+    <echo>Hello world!</echo>
+  </target>
+
+  <target name="goodbye" depends="hello">
+    <echo>Goodbye!</echo>
+  </target>
+
+  <target name="version">
+    <echo>Version is ${version}</echo>
+  </target>
+
+</project>

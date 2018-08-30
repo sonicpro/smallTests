@@ -1,0 +1,51 @@
+<html>
+<head>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+  $('input:submit').click(function(){
+	//$('p').text("Form submiting.....").addClass('submit');
+	//$('input:submit').attr("disabled", true);	
+	window.alert("Caught here");
+});
+</script>
+
+<style type="text/css">
+	.submit{
+		padding:8px;
+		border:1px solid blue;
+	}
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<h1>Disabled submit form button after clicked with jQuery</h1>
+
+<form action="#">
+	<p>
+		I'm a form ~
+	</p>
+	<input type="submit" value="Submit"></input>
+        <button>Enable Submit Button</button>
+</form>
+
+<script type="text/javascript">
+  $('input:submit').click(function(){
+	//$('p').text("Form submiting.....").addClass('submit');
+	//$('input:submit').attr("disabled", true);	
+	window.alert("Caught here");
+});
+</script>
+ 
+<script type="text/javascript">
+ $('button').click(function(){
+	$('p').text("I'm a form ~").removeClass('submit');
+	$('input:submit').attr("disabled", false);	
+});
+</script>
+ 
+</body>
+</html>
+

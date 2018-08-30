@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Classes</title>
+	<script src="https://traceur-compiler.googlecode.com/git/bin/traceur.js"></script>
+	<script src="https://traceur-compiler.googlecode.com/git/src/bootstrap.js"></script>
+</head>
+<body>
+	<script type="text/traceur">
+		class Language{
+			constructor(name, founder, year){
+				this.name = name;
+				this.founder = founder;
+				this.year = year;
+			}
+			summary(){
+				return this.name + " was created by " + this.founder + " in " + this.year;
+			}
+		}
+
+		class MetaLanguage extends Language{
+			constructor(x, y, z, version){
+				super(x, y, z);
+				this.version = version;
+			}
+		}
+	</script>
+</body>
+</html>

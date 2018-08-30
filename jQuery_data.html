@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="application/javascript">
+	  $(document).ready(function () {
+		$( "body" ).data( "foo", 52 );
+		$( "body" ).data( "bar", { myType: "test", count: 40 } );
+		$( "body" ).data( { baz: [ 1, 2, 3 ] } );
+		$( "body" ).data( "buzz", [ 4, 5, 6] );
+		$( "body" ).data( "foo" ); // 52
+		$( "body" ).data(); // { foo: 52, bar: { myType: "test", count: 40 }, baz: [ 1, 2, 3 ] }
+	  });
+	</script>
+  </head>
+  <body>
+  </body>
+</html>
