@@ -1,0 +1,14 @@
+{
+  "name": "rxjs_demos",
+  "version": "1.0.0",
+  "description": "rxjs operators test snippets.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vlad",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  }
+}
