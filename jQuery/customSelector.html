@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<title>Selektory niestandardowe</title>
+</head>
+<body>
+<p>This from very (rare?) book about jQuery, jQueryUI, jQueryMobile. See the other book by Cody Lindley for the same topic of jQuery Custom Selectors.
+<h2>Co trzeci element listy zostanie wyróĝniony niebieskim tïem.</h2>
+
+<ul>
+<li>Jeden,</li>
+<li>dwa,</li>
+<li>trzy,</li>
+<li>cztery,</li>
+<li>piÚÊ,</li>
+<li>szeĂÊ,</li>
+<li>siedem,</li>
+<li>osiem,</li>
+<li>dziewiÚÊ,</li>
+<li>dziesiÚÊ.</li>
+</ul>
+
+
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<script>
+//prosz£ przenieĻô ten kod do odr£bnego pliku .js
+$(document).ready(function() {
+
+$.expr[':'].third = function(obj, index, meta, stack) {
+
+// obj zawiera bieŚcy element
+
+// index zawiera liczb£ z zakresu 0 – n, zaleŚnie od
+// bieŚcego elementu i liczby elementów
+
+// meta zawiera tablic£ o nast£pujcych wartoĻciach:
+// [":third('bla')", "third", "'", "bla"]
+
+// stack zawiera obiekt NodeList, który moŚna przekszta§ciô
+// na tablic£, uŚywajc wywo§ania $.makeArray(stack)
+
+return (index + 1) % 3 == 0;
+};
+
+$('li:third(\'bla\')').css('background-color', 'blue');
+
+// OczywiĻcie dok§adnie taki sam efekt uzyskamy, stosujc
+// selektor jQuery li:nth-child(3n), jednak ten przyk§ad
+// ma jedynie pokazaô, w jaki sposób moŚna implementowaô
+// niestandardowe selektory.
+
+});
+
+</script>
+</body>
+</html>
+                

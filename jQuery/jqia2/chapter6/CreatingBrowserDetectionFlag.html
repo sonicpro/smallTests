@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>From jqia2</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  </head>
+  <body>
+    <select id="aSelectElement">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <script>
+      var select = $('#aSelectElement')[0];
+      select.add(
+      new Option('Two and \u00BD','2.5'), /*$.browser.msie*/ false ? 2 : select.options[2]
+      );
+    </script>
+  </body>
+</html>

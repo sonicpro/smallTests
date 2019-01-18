@@ -1,0 +1,32 @@
+<!doctyle=html>
+ <html>
+  <head>
+    <title>Sizzle selectors vs CSS selectors in jQuery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  </head>
+  <p>Sizzle custom selectors like :even are zero-based and slow.<br/>
+    CSS selectors like :nth-child(odd) are one-based and fast.
+  </p>
+  <body>
+    <div class="cf">
+      <div class="elem">
+        First
+      </div>
+      <div class="elem">
+        Second
+      </div>
+      <div class="elem">
+        Third
+      </div>
+      <div class="elem">
+        Fourth
+      </div>
+      <div class="elem">
+        Fifth
+      </div>
+    </div>
+    <script src="sizzleEvens.js"></script>
+    <!-- <script src="cssOdds.js"></script> -->
+  </body>
+ </html>
