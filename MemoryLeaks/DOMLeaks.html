@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p></p>
+    <script>
+      window.onload = function () {
+        start();
+      };
+
+      function start() {
+        var p = document.getElementsByTagName("p")[0];
+        // Grlobal varaible becomes detached.
+        detached = document.createElement("div");
+        p.appendChild(detached);
+        p.removeChild(detached);
+        fill(detached);
+      }
+
+      function fill() {
+        for (var i = 0; i != 25; ++i) {
+          var div = document.createElement("div");
+          div.data = new Array(10000);
+          for (var j = 0, l = div.data.length; j != l; ++j) {
+            div.data[j] = j.toString();
+          }
+          detached.appendChild(div);
+        }
+      }
+    </script>
+  </body>
+</html>
+
