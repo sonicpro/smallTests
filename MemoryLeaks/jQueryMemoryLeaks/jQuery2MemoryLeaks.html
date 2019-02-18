@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery2 memory leaks</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="jQuery2MemLeaks.js"></script>
+  </head>
+  <body>
+    <div id="data"></div>
+    Утечка идет...
+
+    <input type="button" onclick="clearInterval(interval)" value="stop" />
+  </body>
+</html>
+
