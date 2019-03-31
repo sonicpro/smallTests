@@ -1,0 +1,70 @@
+.parentSelectorBox
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    width: 600px;
+    overflow: auto;
+    border: 1px solid red;
+}
+.parentSelectorBox .fieldsBox
+{
+    width: 200px;
+    margin: 5px;
+    float: left;
+    display: inline;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    border: 1px solid grey;
+    height: 400px;
+    overflow: auto;
+}
+.parentSelectorBox ul
+{
+    padding: 5px;
+}
+.parentSelectorBox li
+{
+    padding: 5px 5px 0px 5px;
+    height: 15px;
+    list-style-type: none;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.parentSelectorBox li:hover
+{
+    background-color: lightgrey;
+}
+
+.parentSelectorBox li.selected
+{
+    background-color: #06f;
+    color: white;
+}
+.parentSelectorBox .actionButtonsBox
+{
+    width: 100px;
+    margin: 5px;
+    float: left;
+    padding-top: 150px;
+}
+.parentSelectorBox .actionButtonsBox .button
+{
+    margin: 0 auto;
+    height: 32px;
+    width: 32px;
+    cursor:pointer;
+}
+.parentSelectorBox .actionButtonsBox .button.left::after
+{
+    /*background-image: url('http://imagehost.bigwavesoftware.net/png/arrow_blue_left_32.png');*/
+    content: "\2190";
+}
+.parentSelectorBox .actionButtonsBox .button.right::after
+{
+    /*background-image: url('http://imagehost.bigwavesoftware.net/png/arrow_blue_right_32.png');*/
+    content: "\2192";
+}
