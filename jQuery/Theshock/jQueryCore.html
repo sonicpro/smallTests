@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery v1.5 custom build with only core.js, selector.js, and traversing.js included</title>
+  </head>
+  <body>
+    <h4>jQuery v1.5 custom build with only core.js, selector.js, and traversing.js included</h4>
+    <p>jQuery - is a factory for jQuery.prototype.init()-based object. Allows us to omit "new" keyword.
+    You can try the following in the console:</p>
+    <pre>
+      var Init = function () {
+            console.log('[Init]');
+      };
+
+      var jQuery = function () {
+            console.log('[jQuery]');
+      return new Init();
+      };
+
+      Init.prototype = jQuery.prototype = {
+            constructor: jQuery
+      };
+
+      var $elem = jQuery(); // [jQuery] , [Init]
+
+      console.log( $elem instanceof jQuery ); // true
+      console.log( $elem instanceof Init   ); // true
+    </pre>
+    <script src="jquery.js"></script>
+    <script src="loadJqueryCore.js"></script>
+  </body>
+</html>
