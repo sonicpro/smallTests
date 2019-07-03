@@ -8,21 +8,21 @@
         <script src="app.js"></script>
     </head>
     <body>
-        <div ng-controller="TodoCtrl as todosService">
-            <h4>Total Todos: {{todosService.getTotalTodos()}}</h4>
+        <div ng-controller="TodoCtrl">
+            <h4>Total Todos: {{getTotalTodos()}}</h4>
             <ul class="unstyled">
-                <li ng-repeat="todo in todosService.todos">
+                <li ng-repeat="todo in todos">
                     <input type="checkbox" ng-model="todo.done" />
                     <span class="done-{{todo.done}}">{{todo.text}}</span>
                 </li>
             </ul>
 
             <form class="form-horizontal">
-                <input type="text" ng-model="todosService.formTodoText" ng-model-instant />
-                <button class="btn" ng-click="todosService.addTodo()"><i class="icon-plus"></i>Add</button>
+                <input type="text" ng-model="formTodoText" ng-model-instant />
+                <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i>Add</button>
             </form>
 
-            <button class="btn-large" ng-click="todosService.clearCompleted()"><i class="icon-trash"></i>Clear Completed</button>
+            <button class="btn-large" ng-click="clearCompleted()"><i class="icon-trash"></i>Clear Completed</button>
         </div>
     </body>
 

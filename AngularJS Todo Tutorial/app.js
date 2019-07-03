@@ -1,8 +1,8 @@
 angular.module("controllerAsExample", [])
-  .controller("TodoCtrl", TodoCtrl);
+  .controller("TodoCtrl", ["$scope", TodoCtrl]);
 
-function TodoCtrl() {
-    this.todos = [{
+function TodoCtrl($scope) {
+    $scope.todos = [{
         text: "Learn AngularJS",
         done: false
     }, {
@@ -10,23 +10,21 @@ function TodoCtrl() {
         done: false
     }],
 
-    this.formTodoText = "";
-}
+        $scope.addTodo = function () {
+            $scope.todos.push({
+                text: $scope.formTodoText,
+                done: false
+            });
+            $scope.formTodoText = "";
+        };
 
-TodoCtrl.prototype.addTodo = function () {
-    this.todos.push({
-        text: this.formTodoText,
-        done: false
-    });
-    this.formTodoText = "";
-};
+    $scope.getTotalTodos = function () {
+        return $scope.todos.length;
+    };
 
-TodoCtrl.prototype.getTotalTodos = function () {
-    return this.todos.length;
-}
-
-TodoCtrl.prototype.clearCompleted = function () {
-    this.todos = _.filter(this.todos, function (todo) {
-        return !todo.done;
-    });
+    $scope.clearCompleted = function () {
+        $scope.todos = _.filter($scope.todos, function (todo) {
+            return !todo.done;
+        });
+    }
 }
