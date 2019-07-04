@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body><button data-visible-items="6">button1</button><button>button2</button></body>
+  <script>
+    var dataset = document.querySelector("button:nth-child(odd)").dataset;
+    if ("visibleItems" in dataset) {
+    console.log(dataset.visibleItems);
+    }
+    if ("postUrl" in dataset) {
+    console.log(dataset.postUrl);
+    }
+  </script>
+</html>
