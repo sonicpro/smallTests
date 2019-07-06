@@ -1,1 +1,27 @@
- 
+ <!DOCTYPE html>
+ <html ng-app="app">
+     <head>
+         <title>Parking</title>
+         <script src="lib/angular.min.js"></script>
+         <script src="app.js"></script>
+     </head>
+     <body ng-controller="parkingCtrl">
+        <h3>[Packt] Parking</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterating over a scoped variable -->
+                <tr ng-repeat="car in cars">
+                    <td>{{car.plate}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Creating a new JavaScript object car and binding it to the scope. -->
+        <input type="text" ng-model="car.plate" />
+        <button ng-click="park(car)">Park</button>
+     </body>
+ </html>
