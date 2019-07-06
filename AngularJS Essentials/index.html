@@ -7,6 +7,7 @@
          <script src="lib/angular-sanitize.min.js"></script>
          <script src="app.js"></script>
          <script src="controllers/parking.js"></script>
+         <script src="directives/alert.js"></script>
      </head>
      <body ng-controller="parkingCtrl">
         <h3 ng-bind-html="appTitle"></h3>
@@ -45,6 +46,12 @@
         <button ng-click="park()">Park</button>
         -->
         <!-- Low coupling version of the "park()" controller action, scoped variable is passed as parameter. -->
-        <button ng-click="park(car)" ng-disabled="!car.plate">Park</button>
+        <button ng-click="park(car)" ng-disabled="!car.plate || !car.color">Park</button>
+
+        <alert ng-show="showAlert"
+            topic="alertTopic"
+            description="alertDescription"
+            close="closeAlert()">
+        </alert>
      </body>
  </html>

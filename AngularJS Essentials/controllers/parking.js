@@ -9,6 +9,8 @@ function parkingCtrl($scope, $sce) {
 
     $scope.appTitle = $sce.trustAsHtml("<b>[Packt] Parking</b>");
 
+    $scope.showAlert = true;
+
     // High coupling version of the park() controller action.
     // $scope.park = function () {
     //     $scope.car.entrance = new Date();
@@ -30,4 +32,11 @@ function parkingCtrl($scope, $sce) {
         "Red",
         "Silver"
     ];
+
+    $scope.alertTopic = "Something went wrong!";
+    $scope.alertDescription = "You must inform the plate and the color of the car!";
+
+    $scope.closeAlert = function () {
+        $scope.showAlert = false;
+    }
 }
