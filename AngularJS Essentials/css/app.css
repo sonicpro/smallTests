@@ -1,7 +1,9 @@
+/* Superseded by the transitioned ruleset, see below.
 .selected {
   background-color: #FAFAD2;
 }
-   
+*/
+
 .alert {
   background-color: #F2DEDE;
   border: 1px solid #EED3D7;
@@ -20,23 +22,52 @@
   font-size: 16px;
 }
 
-.accordion-item {
-  border: 1px solid #CCCCCC;
-  cursor: pointer;
-  background: -moz-linear-gradient(top, #CCCCCC, #EEEEEE);
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 5px 5px 0px 0px;
-  margin-top: 10px;
+/* Rulesets for transitioning animation of the ng-repeated elements. */
+/* "From" class */
+.ng-enter {
+  -webkit-transition: opacity 5s linear;
+  -moz-transition: opacity 5s linear;
+  -ms-transition: opacity 5s linear;
+  -o-transition: opacity 5s linear;
+  transition: opacity 5s linear;
+  opacity: 0;
+}
+/* "To" class - triggers animation */
+.ng-enter-active {
+  opacity: 1;
 }
 
-.accordion-description {
-  border: 1px dashed #CCCCCC;
-  border-top: 0px;
-  border-radius: 0px 0px 5px 5px;
-  background-color: #FFFFFF;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
+/* Hide animation for <alert> directive element */
+/* "From" class */
+.ng-hide-add {
+  -webkit-transition: opacity 5s linear;
+  -moz-transition: opacity 5s linear;
+  -ms-transition: opacity 5s linear;
+  -o-transition: opacity 5s linear;
+  transition: opacity 5s linear;
+  opacity: 1;
+}
+/* "To" class - triggers animation */
+.ng-hide-add-active {
+  display: block !important;
+  opacity: 0;
+}
+
+/* The same technique used for ngClass directive animating */
+.selected {
+  -webkit-transition: background-color 5s linear;
+  -moz-transition: background-color 5s linear;
+  -ms-transition: background-color 5s linear;
+  -o-transition: background-color 5s linear;
+  transition: background-color 5s linear;
+  background-color: #FAFAD2 !important;
+}
+
+/* "From" class */
+.selected-add-class {
+  opacity: 0;
+}
+/* "To" class - triggers animation */
+.selected-add-class-active {
+  opacity: 1;
 }
