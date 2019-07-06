@@ -6,28 +6,35 @@
          <script src="lib/angular.min.js"></script>
          <script src="lib/angular-sanitize.min.js"></script>
          <script src="app.js"></script>
+         <script src="controllers/parking.js"></script>
      </head>
      <body ng-controller="parkingCtrl">
         <h3 ng-bind-html="appTitle"></h3>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Plate</th>
-                    <th>Color</th>
-                    <th>Entrance</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Iterating over a scoped variable -->
-                <tr ng-repeat="car in cars" ng-class="{selected: car.selected}">
-                    <td><input type="checkbox" ng-model="car.selected" /></td>
-                    <td><span ng-bind="car.plate"></span></td>
-                    <td><span ng-bind="car.color"></span></td>
-                    <td><span ng-bind="car.entrance"></span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div ng-show="cars.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Plate</th>
+                        <th>Color</th>
+                        <th>Entrance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterating over a scoped variable -->
+                    <tr ng-repeat="car in cars" ng-class="{selected: car.selected}">
+                        <td><input type="checkbox" ng-model="car.selected" /></td>
+                        <td><span ng-bind="car.plate"></span></td>
+                        <td><span ng-bind="car.color"></span></td>
+                        <td><span ng-bind="car.entrance"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div ng-hide="cars.length > 0">
+            The parking lot is empty
+        </div>
         <!-- Creating a new JavaScript object car and binding it to the scope. -->
         <input type="text" ng-model="car.plate" placeholder="What's the plate?" />
 
