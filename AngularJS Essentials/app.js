@@ -1,4 +1,4 @@
-var app = angular.module("app", [])
+angular.module("app", [])
     .controller("parkingCtrl", ["$scope", parkingCtrl]);
 
 function parkingCtrl($scope) {
