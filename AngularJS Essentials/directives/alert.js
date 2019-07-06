@@ -6,11 +6,11 @@ app.directive("alert", function () {
             // Right-hand side is the name of the attribute of the <alert></alert> element.
             // "=" means two-way binding with the controller scope variables (those are "alertTopic" and "alertDescription" in parking.js).
             topic: "=", // "=topic",
-            description: "=", // "=description",
             // "&" means the reference to the parent scope. Again, what is following "&", i.e. "close" is the <alert> element attribute.
             close: "&" // "&close"
         },
         templateUrl: "alert.html",
-        replace: true
+        replace: true,
+        transclude: true
     };
 });
