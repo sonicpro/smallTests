@@ -3,10 +3,11 @@
      <head>
          <title>Parking</title>
          <script src="lib/angular.min.js"></script>
+         <script src="lib/angular-sanitize.min.js"></script>
          <script src="app.js"></script>
      </head>
      <body ng-controller="parkingCtrl">
-        <h3>[Packt] Parking</h3>
+        <h3 ng-bind-html="appTitle"></h3>
         <table>
             <thead>
                 <tr>
