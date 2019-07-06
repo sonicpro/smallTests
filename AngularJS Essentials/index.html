@@ -12,17 +12,23 @@
             <thead>
                 <tr>
                     <th>Plate</th>
+                    <th>Entrance</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Iterating over a scoped variable -->
                 <tr ng-repeat="car in cars">
-                    <td>{{car.plate}}</td>
+                    <td><span ng-bind="car.plate"></span></td>
+                    <td><span ng-bind="car.entrance"></span></td>
                 </tr>
             </tbody>
         </table>
         <!-- Creating a new JavaScript object car and binding it to the scope. -->
         <input type="text" ng-model="car.plate" />
+        <!-- High coupling version of the "park()" controller action.
+        <button ng-click="park()">Park</button>
+        -->
+        <!-- Low coupling version of the "park()" controller action, scoped variable is passed as parameter. -->
         <button ng-click="park(car)">Park</button>
      </body>
  </html>
