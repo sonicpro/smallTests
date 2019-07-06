@@ -15,12 +15,20 @@ function parkingCtrl($scope, $sce) {
     //     $scope.car.entrance = new Date();
     //     $scope.cars.push($scope.car);
     //     delete $scope.car;
-    // }
+    // };
 
     // Low coupling version.
     $scope.park = function (car) {
         car.entrance = new Date();
         $scope.cars.push(car);
         delete $scope.car;
-    }
+    };
+
+    $scope.colors = [
+        "White",
+        "Black",
+        "Blue",
+        "Red",
+        "Silver"
+    ];
 }
