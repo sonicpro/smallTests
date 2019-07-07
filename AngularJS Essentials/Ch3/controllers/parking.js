@@ -1,13 +1,13 @@
-app.controller("parkingCtrl", ["$scope", "$sce", parkingCtrl]);
+app.controller("parkingCtrl", ["$scope", "$sce", "$filter", parkingCtrl]);
 
-function parkingCtrl($scope, $sce) {
+function parkingCtrl($scope, $sce, $filter) {
     $scope.cars = [
         { plate: "6MBV006" },
         { plate: "5BBM299" },
         { plate: "5AOJ230" }
     ];
 
-    $scope.appTitle = $sce.trustAsHtml("<b>[Packt] Parking</b>");
+    $scope.appTitle = $sce.trustAsHtml($filter("uppercase")("<b>[Packt] Parking</b>"));
 
     $scope.showAlert = true;
 
