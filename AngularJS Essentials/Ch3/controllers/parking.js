@@ -9,8 +9,6 @@ function parkingCtrl($scope, $sce, $filter) {
 
     $scope.appTitle = $sce.trustAsHtml($filter("uppercase")("<b>[Packt] Parking</b>"));
 
-    $scope.showAlert = true;
-
     // High coupling version of the park() controller action.
     // $scope.park = function () {
     //     $scope.car.entrance = new Date();
@@ -34,11 +32,7 @@ function parkingCtrl($scope, $sce, $filter) {
     ];
 
     $scope.alertTopic = "Something went wrong!";
-    $scope.alertDescription = "You must inform the plate and the color of the car!";
-
-    $scope.closeAlert = function () {
-        $scope.showAlert = false;
-    }
+    $scope.alertDescription = "The plate is invalid!";
 
     /* Cannot get it working, commented out for a moment.
     $scope.stableComparator = function (v1, v2) {
