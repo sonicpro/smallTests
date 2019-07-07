@@ -9,6 +9,7 @@
          <script src="app.js"></script>
          <script src="controllers/parking.js"></script>
          <script src="directives/alert.js"></script>
+         <script src="filters/plate.js"></script>
      </head>
      <body ng-controller="parkingCtrl">
         <h3 ng-bind-html="appTitle"></h3>
@@ -20,7 +21,7 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th ng-click="order = !order">Plate</th>
+                        <th ng-click="order = !order"><a href="">Plate</a></th>
                         <th>Color</th>
                         <th>Entrance</th>
                     </tr>
@@ -30,9 +31,9 @@
                     <tr ng-repeat="car in cars | filter: criteria | orderBy:'plate':order"
                         ng-class="{selected: car.selected}">
                         <td><input type="checkbox" ng-model="car.selected" /></td>
-                        <td><span ng-bind="car.plate"></span></td>
+                        <td><span ng-bind="car.plate | plate"></span></td>
                         <td><span ng-bind="car.color"></span></td>
-                        <td><span ng-bind="car.entrance"></span></td>
+                        <td><span ng-bind="car.entrance | date:'MM/dd/yyyy hh:mm'"></span></td>
                     </tr>
                 </tbody>
             </table>
