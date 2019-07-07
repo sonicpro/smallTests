@@ -37,22 +37,6 @@
   opacity: 1;
 }
 
-/* Hide animation for <alert> directive element */
-/* "From" class */
-.ng-hide-add {
-  -webkit-transition: opacity 5s linear;
-  -moz-transition: opacity 5s linear;
-  -ms-transition: opacity 5s linear;
-  -o-transition: opacity 5s linear;
-  transition: opacity 5s linear;
-  opacity: 1;
-}
-/* "To" class - triggers animation */
-.ng-hide-add-active {
-  display: block !important;
-  opacity: 0;
-}
-
 /* The same technique used for ngClass directive animating */
 .selected {
   -webkit-transition: background-color 5s linear;

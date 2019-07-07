@@ -21,6 +21,7 @@ function parkingCtrl($scope, $sce, $filter) {
         car.entrance = new Date();
         $scope.cars.push(car);
         delete $scope.car;
+        $scope.plateForm.$setPristine();
     };
 
     $scope.colors = [
@@ -32,7 +33,6 @@ function parkingCtrl($scope, $sce, $filter) {
     ];
 
     $scope.alertTopic = "Something went wrong!";
-    $scope.alertDescription = "The plate is invalid!";
 
     /* Cannot get it working, commented out for a moment.
     $scope.stableComparator = function (v1, v2) {
