@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery.extend()</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+	var a = { banana: { weight: 2, price: 12 }, tomato: 2 };
+	b = { banana: {weight: 7 } };
+	console.log("Let's try to by seven for the price of 2.");
+	console.log(JSON.stringify($.extend({}, a, b)));
+	console.log("Not quite succeeded, the quantity information is missing. Let's do another try.");
+	console.log(JSON.stringify($.extend(true, {}, a, b)));
+	console.log("Wow, this seems to be much better this time.");
+</script>
+</head>
+<body>
+</body>
+</html>
