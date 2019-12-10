@@ -1,3 +1,3 @@
 /*global $ */
 
-$("div.elem:nth-child(odd)").addClass("mark");
+$("div.cf>div.elem:nth-child(1)").addClass("mark");
